@@ -16,3 +16,7 @@ position.coords.altitudeAccuracy
 position.coords.speed
 position.coords.heading
 ```
+######15
+```
+var trackId = navigator.geolocation.watchPosition  //may drain battery
+```

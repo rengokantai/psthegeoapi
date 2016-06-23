@@ -23,7 +23,7 @@ function displayLocation(position){
 
 }
 
-function displayEoor(err){
+function displayError(err){
     var errors = ['Unknown error','Permission denied by user'];
     var message = errors[err.code];
     console.warn(message,err.message);
@@ -31,8 +31,45 @@ function displayEoor(err){
 
 window.onload = function () {
     if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(displayLocation,displayEoor)
+        navigator.geolocation.getCurrentPosition(displayLocation,displayError)
     }else{
         alert('error')
+    }
+
+    var dis = document.getElementById('dis');
+    var track = document.getElementById('track');
+    track.onclick = function(e){
+        e.preventDefault();
+        if(track.innerHTML==="start"){
+            track.innerHTML="stop";
+            trackme();
+        }else{
+            track.innerHTML="start";
+            cleartracking();
+            var d = comptotaldis();
+            if(d>0){
+                d=Math.round(d*1000)/1000;
+                dis.innerHTML = d+"km"
+            }else{
+                dis.innerHTML='nothing'
+            }
+        }
+    }
+
+}
+
+
+function comptotaldis(){
+    return 0;
+}
+
+function trackme(){
+    trackid = navigator.geolocation.watchPosition(displayLocation,displayError)
+}
+
+function cleartracking(){
+    if(trackid){
+        navigator.geolocation.clearWatch(trackid)
+        trackid=null;
     }
 }
