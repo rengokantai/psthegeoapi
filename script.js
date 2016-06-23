@@ -8,9 +8,15 @@ function displayLocation(position){
     pLocation.innerHTML+=lat+","+long+"<br>";
 }
 
+function displayEoor(err){
+    var errors = ['Unknown error','Permission denied by user'];
+    var message = errors[err.code];
+    console.warn(message,err.message);
+}
+
 window.onload = function () {
     if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(displayLocation)
+        navigator.geolocation.getCurrentPosition(displayLocation,displayEoor)
     }else{
         alert('error')
     }
