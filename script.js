@@ -40,7 +40,9 @@ function displayError(err){
 
 window.onload = function () {
     if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(displayLocation,displayError)
+        navigator.geolocation.getCurrentPosition(displayLocation,displayError,{enableHighAccuracy:true,
+        timeout:4000,
+            maximumAge:0})
     }else{
         alert('error')
     }

@@ -29,3 +29,12 @@ useage
 ```
 google.maps.geometry.spherical.computeDistanceBetween(lat,long)AIzaSyADsv_9X4wOMWHAo43RaGltLwPWspsWczg
 ```
+######20 The position
+```
+navigator.geolocation.getCurrentPosition(a,b,options)
+```
+```
+enableHighAccuracy
+timeout
+maximumAge
+```
