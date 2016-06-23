@@ -1,9 +1,18 @@
 /**
  * Created by Hernan Y.Ke on 2016/6/23.
  */
+var trackid=null;
+var locations=[]
 function displayLocation(position){
     var lat = position.coords.latitude;
     var long = position.coords.longitude;
+
+    var googleLoc = new google.maps.LatLng(
+        lat,long
+    );
+    locations.push(googleLoc);
+
+
     var pLocation = document.getElementById("location");
     var pInfo = document.getElementById("info");
     var date = new Date();
@@ -60,7 +69,13 @@ window.onload = function () {
 
 
 function comptotaldis(){
-    return 0;
+    var totaldis=0;
+    if(location.length>1){
+        for(vari=1;i<locations.length;i++){
+            totaldis+=google.maps.geometry.spherical.computeDistanceBetween(locations[i-1],locations[i])
+        }
+    }
+    return totaldis;
 }
 
 function trackme(){

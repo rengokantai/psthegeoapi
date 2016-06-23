@@ -20,3 +20,12 @@ position.coords.heading
 ```
 var trackId = navigator.geolocation.watchPosition  //may drain battery
 ```
+######17 computeDistanceBetween
+Google maps geolocation
+```
+google.maps.geometry
+```
+useage
+```
+google.maps.geometry.spherical.computeDistanceBetween(lat,long)AIzaSyADsv_9X4wOMWHAo43RaGltLwPWspsWczg
+```
