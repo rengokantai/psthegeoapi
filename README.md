@@ -38,3 +38,19 @@ enableHighAccuracy
 timeout
 maximumAge
 ```
+######24 Google maps API
+```
+google.maps.Map
+google.maps.event.addListener
+google.maps.Marker
+google.maps.InfoWindow
+```
+######25
+async:execute this script asyncly, the page doesnot wait for the script to run before loading the rest of the page
+defer: execute after page is loaded and doc is parsesd
+
+######29Places Library
+```
+google.maps.places.PlacesService
+service.nearbySearch(request,cb)
+```
